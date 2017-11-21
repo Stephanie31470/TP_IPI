@@ -1,0 +1,28 @@
+p {
+    margin: auto;
+    border: 1px solid white;
+    padding: 20px;
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 3px;
+    color: #FFFFFF;
+    font-family: 'Lobster', cursive;
+    font-style: italic
+}
+
+body {
+
+    background-color:DodgerBlue;
+
+}
+
+h1 {
+    font-style: italic;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    color: #FFFFFF;
+    font-size: 60px;
+    letter-spacing: 3px;
+    text-indent: 50px;
+
+}
