@@ -1,0 +1,27 @@
+{ 
+  	"user": [
+
+    {
+  		"id" : 0,
+  		"identifiant": "Dieu",
+  		"email" : "Azerty123@sfr.fr",
+  		"mdp" : "Azerty123"
+  	},
+
+  	{
+  		"id" :1,
+  		"identifiant": "Chrystelle",
+  		"email" : "Bzerty123@sfr.fr",
+  		"mdp" : "Azerty123"
+  	},
+
+  	{
+  		"id" : 2,
+  		"identifiant": "Chrysphanie",
+  		"email" : "Czerty123@sfr.fr",
+  		"mdp" : "Azerty123"
+
+  	}
+  ]
+
+} 

@@ -1,0 +1,50 @@
+<!--<section class="container" ng-controller="TabController as tab">
+				<ul class="nav nav-pills">
+						<li ng-class="{ active:tab.isSet(1) }">
+								<a href="" ng-click="tab.setTab(1)">ACCUEIL</a>
+						</li>
+						<li ng-class="{ active:tab.isSet(2) }">
+								<a href="" ng-click="tab.setTab(2)">MER</a>
+						</li>
+						<li ng-class="{ active:tab.isSet(3) }">
+								<a href="" ng-click="tab.setTab(3)">MONTAGNE</a>
+						</li>
+						<li ng-class="{ active:tab.isSet(3) }">
+								<a href="" ng-click="tab.setTab(3)">ETRANGER</a>
+						</li>
+				</ul>
+				<div ng-show="tab.isSet(1)">
+						onglets1
+				</div>
+				<div ng-show="tab.isSet(2)">
+						onglet2
+				</div>
+				<div ng-show="tab.isSet(3)">
+						onglet3
+				</div>
+				<div ng-show="tab.isSet(4)">
+						onglet3
+				</div>
+		</section>-->
+
+
+/*var app = angular.module('voyage', []);
+
+  app.controller('TabController', function(){
+    this.tab = 1;
+
+    this.setTab = function(newValue){
+      this.tab = newValue;
+    };
+
+    this.isSet = function(tabName){
+      return this.tab === tabName;
+    };
+  });*/
+
+
+
+
+		
+		
+		
