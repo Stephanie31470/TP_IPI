@@ -1,26 +1,22 @@
-p {
-    margin: auto;
-    border: 1px solid white;
-    padding: 20px;
+#panneau2 p {
+ 
     text-indent: 50px;
     text-align: justify;
     letter-spacing: 3px;
-    color: #FFFFFF;
+    color:dodgerblue;
     font-family: 'Lobster', cursive;
     font-style: italic
 }
 
-body {
 
-    background-color:DodgerBlue;
 
-}
+
 
 h1 {
     font-style: italic;
     text-align: center;
     font-family: 'Lobster', cursive;
-    color: #FFFFFF;
+    color:dodgerblue;
     font-size: 60px;
     letter-spacing: 3px;
     text-indent: 50px;
