@@ -1,24 +1,29 @@
-#panneau2 p {
- 
-    text-indent: 50px;
+/*#panneau2*/
+
+p {
+    color: #7B68EE;
+    font-family: 'Oxygen', sans-serif;
+    font-style: italic;
+    font font-size: medium;
     text-align: justify;
-    letter-spacing: 3px;
-    color:dodgerblue;
-    font-family: 'Lobster', cursive;
-    font-style: italic
+    margin-left: 50px;
+    margin-right: 50PX;
 }
 
 
 
 
-
 h1 {
-    font-style: italic;
-    text-align: center;
-    font-family: 'Lobster', cursive;
-    color:dodgerblue;
-    font-size: 60px;
-    letter-spacing: 3px;
-    text-indent: 50px;
 
+    text-align: center;
+    font-family: 'Cookie', cursive;
+    color: #7B68EE;
+    font-size:60px;
+    
+
+
+}
+
+body {
+    background:Window;
 }
