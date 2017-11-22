@@ -1,5 +1,6 @@
 $(document).ready(function ($) {
 
+    
 window.MyApp = window.MyApp || {};
 
 //gestion des différents panneaux de présentation des voyages
@@ -141,8 +142,6 @@ $('#form-register').submit(function(e) {
 
 
 $('#form-login').submit(function(e) {
-
-
     var identifier = $('#login-identifier').val();
     var password   = $('#login-password').val();
     console.log(identifier);
@@ -151,35 +150,32 @@ $('#form-login').submit(function(e) {
         identifier: identifier,
         password: password
     };
-    var userJSON = JSON.stringify(user);
-
     e.preventDefault();
-
     $(this).find('input').val('');
-
     $.post(
         'json/utilisateurs.json',
-        userJSON,
+        user,
         function(data){
             var i = 0;
             while ( i < data.user.length) {
-                console.log(userJSON.identifier, userJSON.password, data.user[i], i, data.user.length);
-                if (userJSON.identifier == data.user[i].email && userJSON.password == data.user[i].mdp) {
-                    MyApp.alert('success', "Vous êtes authentifié" + data.user[i].identifiant);
+                console.log(user.identifier, user.password, data.user[i], i, data.user.length);
+                if (user.identifier == data.user[i].email && user.password == data.user[i].mdp) {
+                    console.log("sucess");
                     break;
                 } else if (i == data.user.length -1) {
-                    if (userJSON.identifier == "" || userJSON.password == "") {
-                        MyApp.alert('danger', "Veuillez saisir tous les champs");
+                    if (user.identifier == "" || user.password == "") {
+                        console.log("elements manquants");
                     } else {
-                        MyApp.alert('danger', "Nous ne parvenons pas à vous identifier");
+                        console.log("inexistant");
                     }
                 }
-                i++;}
-            },
+                i++;
+            }
+        },
         'json'
         );
-        
 });
+
 
            
                        

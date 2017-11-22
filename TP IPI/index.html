@@ -1,39 +1,32 @@
 <!DOCTYPE html>
-<html ng-app="voyage">
+<html>
 
 	<head>
 		<title>Rêva voyage</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<!--<script type="text/javascript" src="js/angular.min.js"></script>-->
 		<link rel="stylesheet" type="text/css" href="">
-		
-		<script type="text/javascript" src="script.js"></script>
+		<!--<script type="text/javascript" src="script.js"></script>-->
 		<link rel="stylesheet" type="text/css" href="requetes.php">
 		<link rel="shortcut icon" href="image/favIcon.png">
-
 		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-
-
 	</head>
 
 
 
 	<body id="page" >
-
 		<header id="header" class="row col_md-12" >
-			<a data-login-id="form_login" id="login" class="active" href="#login"> Login/Register</a>
-						<!--<img class="img" src="image/header.jpg" alt="logo d'entête du site">-->
+			<a data-login-id="form_login" id="login" class="active" href="#login">
+				Login/Register
+			</a>
 		</header>
 
-		<div class="container gestPanneau">
-		
-			<div id="listeOnglet" class="row">		
 
-				<ul id="onglets" class="nav nav-pills">
+		<nav id="listeOnglet" class="row listeOnglet">
+				<ul id="onglets" class="nav nav-tabs" style="border: none;">
 					
-					<li style="display:inline;" class="col-md-1" >
+					<li style="display:inline;" class="col-md-2" >
 						<a data-panneau-id="panneau1" id="onglet1" class="active" href="#onglet1" >Accueil</a>
 					</li>
 
@@ -56,181 +49,258 @@
 					<li style="display:inline;"  class="col-md-2">
 						<a data-panneau-id="panneau6" id="onglet6" href="#onglet6" >Contact</a>
 					</li>
+				</ul>			
+		</nav>
 
-				</ul>
-			</div>
+		<section class="container listePanneaux">
+			<!-- Panneau accueil -->
+			<div class="panneau col_md-12" id="panneau1">
+				<article class="col-md-8">
 
-			<div class="row list_panneau">
-
-				<!-- Panneau accueil -->
-
-				<div class="panneau" id="panneau1">
 					<h2>Panneau 1</h2>
-				</div>
+				</article>
 
-				<!-- Panneau a propos -->
-				<div class="panneau" id="panneau2" style="display:none">
-					<h1>Venez vous évader avec nous !</h1></br>
+				<aside class="col-md-4">
+					<p>aside</p>
+				</aside>
+			</div>
 
+			<!-- Panneau a propos -->
+			<div class="panneau col_md-12" id="panneau2" style="display:none;">
+
+				<article class="col-md-8">
+					<h1>Venez vous évader avec nous !</h1><br>
+
+					<div class="divP2">
+						<p>Que vous propose Rêva Voyage ?</p><br>
+						<p>En quelques mots, nous vous présentons une nouvelle sélection de ventes exclusives, des offres à la carte parmi un catalogue de produits classés par thématiques, ainsi que des ventes dernière minute pour un départ immédiat. En étant membre Rêva Voyage, vous pouvez accéder à des offres privilégiées de séjours, circuits thématiques, circuits sur mesure ou encore combinés pour découvrir différents hôtels lors de votre voyage.</p>
+						<p>Et vous voulez connaître le plus chouette dans tout ça ?</p>
+						<p>Rêva Voyage a été créé par des professionnels du web et du voyage parcourant le monde et négociant de supers offres rien que pour vous avec des réductions allant de -10% à -50 !</p>
+						<p>Vous bénéficiez ainsi d’offres inédites au meilleur rapport qualité/prix.</p>
+						<p>Maintenant que l’on s’est tout dit, il ne vous reste plus qu’à créer votre compte client en quelques clics pour accéder à toutes nos offres de voyage de luxe. La vie est trop courte pour résister à de pareilles opportunités… Il est temps de faire vos valises !</p>
+					</div>
+				</article>
+
+				<aside class="col-md-4 asideP2">
+					<img class="imgAside rounded" src="image/palmier.jpeg" alt="photo d'un palmier">
+				</aside>
+			</div>
+
+
+			<!-- Panneau Mer-->
+			<div class="panneau" id="panneau3" style="display:none;">
+				<article id="voyage">
 					<div>
-					<p>Que vous propose Rêva Voyage ?</p><br>
-					<p>En quelques mots, nous vous présentons une nouvelle sélection de ventes exclusives, des offres à la carte parmi un catalogue de produits classés par thématiques, ainsi que des ventes dernière minute pour un départ immédiat. En étant membre Rêva Voyage, vous pouvez accéder à des offres privilégiées de séjours, circuits thématiques, circuits sur mesure ou encore combinés pour découvrir différents hôtels lors de votre voyage.</p>
-					<p>Et vous voulez connaître le plus chouette dans tout ça ?</p>
-					<p>Rêva Voyage a été créé par des professionnels du web et du voyage parcourant le monde et négociant de supers offres rien que pour vous avec des réductions allant de -10% à -50 !</p>
-					<p>Vous bénéficiez ainsi d’offres inédites au meilleur rapport qualité/prix.</p>
-					<p>Maintenant que l’on s’est tout dit, il ne vous reste plus qu’à créer votre compte client en quelques clics pour accéder à toutes nos offres de voyage de luxe. La vie est trop courte pour résister à de pareilles opportunités… Il est temps de faire vos valises !</p>
+					<h1>La côte d'Azur</h1>
 					</div>
+					<div class="row justify-content-center">
+				    	<div id="demo" class="carousel slide" data-ride="carousel">
+				        	<!-- Indicators -->
+					        <ul class="carousel-indicators">
+					            <li data-target="#demo" data-slide-to="0" class="active"></li>
+					            <li data-target="#demo" data-slide-to="1"></li>
+					            <li data-target="#demo" data-slide-to="2"></li>
+					        </ul>
+
+					        <!-- The slideshow -->
+					        <div class="carousel-inner">
+					            <div class="carousel-item active">
+					                <img src="photos_voyages/cotedazur1.jpg" alt="cotedazur">
+					            </div>
+					            <div class="carousel-item">
+					                <img src="photos_voyages/cotedazur2.jpg" alt="cotedazur">
+					            </div>
+					            <div class="carousel-item">
+					                <img src="photos_voyages/cotedazur3.jpg" alt="cotedazur">
+					            </div>
+					        </div>
+
+					        <!-- Left and right controls -->
+					        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+					    		<span class="carousel-control-prev-icon"></span>
+					  		</a>
+					        <a class="carousel-control-next" href="#demo" data-slide="next">
+					    		<span class="carousel-control-next-icon"></span>
+					  		</a>
+				    	</div>
+				    </div><br>
+				    <p>Partez sur la Côte d’Azur où vous pourrez profiter de l’agréable douceur du climat. Découvrez Port-Grimaud, cité lacustre nommée la « petite Venise provençale », Grasse, la capitale mondiale du parfum, Nice, capitale de la côte d’Azur, Monaco, principauté perchée sur son célèbre rocher, Ramatuelle qui offre un panorama prestigieux face à la baie de Pampelonne, Cannes, la fameuse Croisette et ses palaces et enfin Saint-Tropez, ancien comptoir maritime fondé par les Grecs, qui se trouve au cœur d’un golfe magnifique qui a très vite attiré peintres et écrivains. Vous apprécierez votre hébergement à proximité de la plage de Sainte-Maxime et le panorama prestigieux de cette région.
+				    </p>
+				</article>
+				<aside>
+					<button type="submit" class="btn btn-primary">Réserver ?</button>
+				</aside>
 
 
-				</div>
+				<article>
+					<h1>La côte pas d'azur</h1>
+					<div class="row justify-content-center">
+				    	<div id="demo" class="carousel slide" data-ride="carousel">
+				        	<!-- Indicators -->
+					        <ul class="carousel-indicators">
+					            <li data-target="#demo" data-slide-to="0" class="active"></li>
+					            <li data-target="#demo" data-slide-to="1"></li>
+					            <li data-target="#demo" data-slide-to="2"></li>
+					        </ul>
 
-				<!-- Panneau Mer-->
-				<div class="panneau" id="panneau3" style="display:none">
-					<h2>Panneau 3</h2>
-				</div>
+					        <!-- The slideshow -->
+					        <div class="carousel-inner">
+					            <div class="carousel-item active">
+					                <img src="photos_voyages/cotedazur1.jpg" alt="cotedazur">
+					            </div>
+					            <div class="carousel-item">
+					                <img src="photos_voyages/cotedazur2.jpg" alt="cotedazur">
+					            </div>
+					            <div class="carousel-item">
+					                <img src="photos_voyages/cotedazur3.jpg" alt="cotedazur">
+					            </div>
+					        </div>
 
-				<!-- Panneau Montage-->
-				<div class="panneau" id="panneau4" style="display:none">
-					<h2>Panneau 4</h2>
-				</div>
-
-				<!-- Panneau Etranger -->
-
-				<div class="panneau" id="panneau5" style="display:none">
-					<h2>Envie de voyager à l'Etranger ?</h2>
-					<p> Voici notre gamme de voyages à l'étranger. Au bord de l'eau ? A la montagne ? un safari ? il y en a pour tous les goûts</p>
-				</div>
-
-
-				<!-- Panneau de formulaire de contact -->
-				<div class="panneau" id="panneau6" style="display:none">
-
-					<h2>Formulaire de contact</h2>
-
-					<div id="form_conteneur">
-						<p>
-							Une question ? N'hésitez pas à nous contacter via ce forulaire de contact. Nous nous engageons à vous répondre sous 48h.
-						</p>
-						<form name="form_contact" id="form_contact" action="">
-							<label for="email-contact">Votre E-mail</label>
-							<input type="email" class="form-control" id="email-contact" aria-describedby="email_place" placeholder="Entrez votre e-mail de contact"/>
-							<div style="display:none">Email Invalide</div>
-							<label for="message"></label>
-							<textarea id="message" class="form-control" placeholder="Ecrivez votre message ici."></textarea>
-							<button type="submit" class="btn btn-primary">Envoyer mon message</button>
-						</form>
-					</div>
-
-					<div id="next_submit" style="display:none">
-						Votre message nous a bien été transmis. Nous vous recontacterons d'ici 48h. A bientôt
-					</div>
-
-				</div>
+					        <!-- Left and right controls -->
+					        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+					    		<span class="carousel-control-prev-icon"></span>
+					  		</a>
+					        <a class="carousel-control-next" href="#demo" data-slide="next">
+					    		<span class="carousel-control-next-icon"></span>
+					  		</a>
+				    	</div>
+				    </div><br>
+				    <p>Partez sur la Côte d’Azur où vous pourrez profiter de l’agréable douceur du climat. Découvrez Port-Grimaud, cité lacustre nommée la « petite Venise provençale », Grasse, la capitale mondiale du parfum, Nice, capitale de la côte d’Azur, Monaco, principauté perchée sur son célèbre rocher, Ramatuelle qui offre un panorama prestigieux face à la baie de Pampelonne, Cannes, la fameuse Croisette et ses palaces et enfin Saint-Tropez, ancien comptoir maritime fondé par les Grecs, qui se trouve au cœur d’un golfe magnifique qui a très vite attiré peintres et écrivains. Vous apprécierez votre hébergement à proximité de la plage de Sainte-Maxime et le panorama prestigieux de cette région.
+				    </p>
+				</article>
+			</div>
 
 
-				<!--Panneau d'inscription-->
 
-				<div class="panneau" id="form_login" style="display:none">
 
-					<h2>Connectez-vous ou Créer votre compte</h2>
 
-					
-					<!--Liste tab inscription/enregistrement-->
-					<ul id="tab" class="nav nav-tabs">
-					    <li>
-					        <a class="nav-link active" data-tab-id="tab-login" id="tab1" class="active" href="#">Connexion</a>
-					    </li>
-					    <li class="tab-nav">
-					        <a class="nav-link" data-tab-id="tab-register" id="tab2" href="#">Inscription</a>
-					    </li>
-					</ul>
 
-					<!-- Tab de connexion-->
-					<div class="tab" id="tab-login">
-  						<div class="card">
-    						<div class="card-body">
-     							<form id="form-login">
-        							<div class="form-group">
-         								<label for="login-identifier">Identifiant ou e-mail</label>
-          								<input type="text" class="form-control" id="login-identifier" aria-describedby="identifierHelp" placeholder="Entrez votre identifiant ou e-mail">
-          								<small class="text-danger collapse"></small>
-        							</div>
-        							<div class="form-group">
-         						 		<label for="login-password">Mot de passe</label>
-          								<input type="password" class="form-control" id="login-password" placeholder="Mot de passe">
-        							</div>
-        							<button type="submit" class="btn btn-primary">Envoyer</button>
-      							</form>
-    						</div>
-  						</div>
-					</div>
 
-					<!-- tab d'inscription-->
-					<div class="tab" id="tab-register" style="display:none">
-						<div class="card">
-						    <div class="card-body">
-						      	<form id="form-register">
-							        <div class="form-group">
-							          	<label for="register-username">Identifiant</label>
-							          	<input type="text" class="form-control" id="register-username" aria-describedby="usernameHelp" placeholder="Entrez un identifiant (lettres, chiffres, _)" />
-							        </div>
-							          	<div id="wrongUsername" style="display:none">
-							          		Votre identifiant est invalide
-							          	</div>	
+			<!-- Panneau Montage-->
+			<div class="panneau" id="panneau4" style="display:none;">
+				<h2>Panneau 4</h2>
+			</div>
 
-							        <div class="form-group">
-							          	<label for="register-email">Adresse e-mail</label>
-							          	<input type="email" class="form-control" id="register-email" aria-describedby="emailHelp" placeholder="Entrez un e-mail">
-							          	<small class="text-danger collapse"></small>
-							        </div>
-							          	<div id="wrongEmail" style="display:none">
-							          		Votre email est invalide. Votre email diot être du type 
-							          	</div>		
+			<!-- Panneau Etranger -->
+			<div class="panneau" id="panneau5" style="display:none;">
+				<h2>Envie de voyager à l'Etranger ?</h2>
+				<p> Voici notre gamme de voyages à l'étranger. Au bord de l'eau ? A la montagne ? un safari ? il y en a pour tous les goûts</p>
+			</div>
 
-							        <div class="form-group">
-							          	<label for="register-password">Mot de passe</label>
-							          	<input type="password" class="form-control" id="register-password" placeholder="Mot de passe (4 caractères min.)">
-							          	<small class="text-danger collapse"></small>
-							        </div>
-							          	<div id="wrongPwd" style="display:none">
-							          		Votre passeword est invalide. Veuillez entrer un mot de passe contenant au moins : une lettre majuscule, une lettre minuscule, et un nombre.
-							          	</div>		
 
-						          	<button id="register" type="submit" class="btn btn-primary">Envoyer</button>
-						     	</form>
-						    </div>
+			<!-- Panneau de formulaire de contact -->
+			<div class="panneau" id="panneau6" style="display:none;">
+
+				<h2>Formulaire de contact</h2>
+
+				<div id="form_conteneur">
+					<p>
+						Une question ? N'hésitez pas à nous contacter via ce forulaire de contact. Nous nous engageons à vous répondre sous 48h.
+					</p>
+
+					<form name="form_contact" id="form_contact" action="">
+						<label for="email-contact">Votre E-mail</label>
+						<input type="email" class="form-control" id="email-contact" aria-describedby="email_place" placeholder="Entrez votre e-mail de contact"/>
+						<div style="display:none;">
+							Email Invalide
 						</div>
-
-						
-
-					</div>
-
-
-
-
-
-
-
-  
+						<label for="message"></label>
+						<textarea id="message" class="form-control" placeholder="Ecrivez votre message ici."></textarea>
+						<button type="submit" class="btn btn-primary">Envoyer mon message</button>
+					</form>					
 				</div>
 
-
-
-				<div class="panneau" id="cache" style="display:none">
-					<h2>Panneau 8</h2>
+				<div id="next_submit" style="display:none;">
+					Votre message nous a bien été transmis. Nous vous recontacterons d'ici 48h. A bientôt
 				</div>
 
 			</div>
 
-		</div>
-			
 
+			<!--Panneau d'inscription-->
+			<div class="panneau" id="form_login" style="display:none;">
 
+				<h2>Connectez-vous ou Créer votre compte</h2>
 
+				
+				<!--Liste tab inscription/enregistrement-->
+				<ul id="tab" class="nav nav-tabs">
+				    <li>
+				        <a class="nav-link active" data-tab-id="tab-login" id="tab1" class="active" href="#">Connexion</a>
+				    </li>
+				    <li class="tab-nav">
+				        <a class="nav-link" data-tab-id="tab-register" id="tab2" href="#">Inscription</a>
+				    </li>
+				</ul>
 
+				<!-- Tab de connexion-->
+				<div class="tab" id="tab-login">
+						<div class="card">
+							<div class="card-body">
+	 							<form id="form-login">
+	    							<div class="form-group">
+	     								<label for="login-identifier">Identifiant ou e-mail</label>
+	      								<input type="text" class="form-control" id="login-identifier" aria-describedby="identifierHelp" placeholder="Entrez votre identifiant ou e-mail">
+	      								<small class="text-danger collapse"></small>
+	    							</div>
+	    							<div class="form-group">
+	     						 		<label for="login-password">Mot de passe</label>
+	      								<input type="password" class="form-control" id="login-password" placeholder="Mot de passe">
+	    							</div>
+	    							<button type="submit" class="btn btn-primary">Envoyer</button>
+	  							</form>
+							</div>
+						</div>
+				</div>
 
+				<!-- tab d'inscription-->
+				<div class="tab" id="tab-register" style="display:none;">
+					<div class="card">
+					    <div class="card-body">
+					      	<form id="form-register">
+						        <div class="form-group">
+						          	<label for="register-username">Identifiant</label>
+						          	<input type="text" class="form-control" id="register-username" aria-describedby="usernameHelp" placeholder="Entrez un identifiant (lettres, chiffres, _)" />
+						        </div>
+						          	<div id="wrongUsername" style="display:none;">
+						          		Votre identifiant est invalide
+						          	</div>	
 
-			<script src="js/jquery-3.2.1.min.js"></script>
-			<script src="jquery.js"> </script>
-		</body>
-	</html>
+						        <div class="form-group">
+						          	<label for="register-email">Adresse e-mail</label>
+						          	<input type="email" class="form-control" id="register-email" aria-describedby="emailHelp" placeholder="Entrez un e-mail">
+						          	<small class="text-danger collapse"></small>
+						        </div>
+						          	<div id="wrongEmail" style="display:none;">
+						          		Votre email est invalide. Votre email diot être du type 
+						          	</div>		
+
+						        <div class="form-group">
+						          	<label for="register-password">Mot de passe</label>
+						          	<input type="password" class="form-control" id="register-password" placeholder="Mot de passe (4 caractères min.)">
+						          	<small class="text-danger collapse"></small>
+						        </div>
+						          	<div id="wrongPwd" style="display:none;">
+						          		Votre passeword est invalide. Veuillez entrer un mot de passe contenant au moins : une lettre majuscule, une lettre minuscule, et un nombre.
+						          	</div>		
+
+					          	<button id="register" type="submit" class="btn btn-primary">Envoyer</button>
+					     	</form>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+			<!--Panneau de reservation-->
+			<div class="panneau" id="cache" style="display:none;">
+				<h2>Panneau 8</h2>
+			</div>
+
+		</section>
+
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="jquery.js"> </script>
+		<script src="utilisateurs.js"></script>
+
+	</body>
+</html>
