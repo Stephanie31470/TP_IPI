@@ -1,27 +1,27 @@
 h1 {
-    font-style: italic;
-    text-align: center;
-    font-family: 'Lobster', cursive;
-    color: dodgerblue;
-    font-size: 60px;
-    letter-spacing: 3px;
-    text-indent: 50px;
+     text-align: center;
+    font-family: 'Cookie', cursive;
+    color: #7B68EE;
+    font-size:60px;
+    
 
 }
 
 p {
-    padding-top: 10px;
+    color: #7B68EE;
+    font-family: 'Oxygen', sans-serif;
     font-style: italic;
-    text-align: center;
-    font-family: 'Lobster', cursive;
-    color:Indigo;
-    font-size: 16px;
-    letter-spacing: 3px;
-    text-indent: 50px;
-    margin: 20px;
+    font font-size: medium;
+    text-align: justify;
+    margin-left: 50px;
+    margin-right: 50PX;
+
 
 }
 
+body {
+    background:Window;
+}
 /*
 .carousel-inner > .item > img
 {
