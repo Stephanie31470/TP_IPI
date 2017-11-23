@@ -17,9 +17,17 @@
 		<script src="js/bootstrap.min.js.map"></script>
 	</head>
 	<body id="page">
-		<!--En-tête de la page-->
-		<header id="header">
-			<a class="btn btn-primary float-right" href="#login" id="login">Se connecter/S'inscrire</a>
+		<header id="header" class="row col_md-12" >
+			<div id="connectionDiv">
+				<a data-login-id="form_login" id="login" class="active" href="#login">
+					Login/Register
+				</a>
+			</div>
+			<div id="deconnectionDiv" style="display:none;">
+				<a data-login-id="form_unlogin" id="unlogin" class="active" href="#unlogin">
+					Déconnexion
+				</a>
+			</div>
 		</header>
 		<!--Le menu d'onglet-->
 		<div id="menu">
@@ -218,6 +226,9 @@
 									<label for="login-password">Mot de passe</label>
 									<input type="password" class="form-control" id="login-password" placeholder="Mot de passe">
 								</div>
+					          	<div id="wrongLoggin" style="display:none;">
+					          		Votre identifiant et/ou le mot de passe est invalide, merci de réessayer.
+					          	</div>
 								<button type="submit" class="btn btn-primary">Envoyer</button>
 							</form>
 						</div>
@@ -244,7 +255,11 @@
 									<input type="password" class="form-control" id="register-password" placeholder="Mot de passe (4 caractères min.)">
 									<small class="text-danger collapse"></small>
 								</div>
-								<div id="wrongPwd" style="display:none;">Votre passeword est invalide. Veuillez entrer un mot de passe contenant au moins : une lettre majuscule, une lettre minuscule, et un nombre.</div>
+								<div id="wrongPwd" style="display:none;">Votre passeword est invalide. Veuillez entrer un mot de passe contenant au moins : une lettre majuscule, une lettre minuscule, et un nombre.
+								</div>
+					          	<div id="alreadyUseEmail" style="display:none;">
+					          		Cette addresse email est déjà enregistrée. Connectez vous, ou utilisez en une autre.
+					          	</div>
 								<button id="register" type="submit" class="btn btn-primary">Envoyer</button>
 							</form>
 						</div>
@@ -283,7 +298,7 @@
 			<div></div>
 			<div></div>
 			<script src="js/jquery-3.2.1.min.js"></script>
+			<script src="utilisateurs.js"></script>
 			<script src="jquery.js"> </script>
-			<!--<script src="utilisateurs.js"></script>-->
 		</body>
 	</html>

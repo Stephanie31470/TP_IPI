@@ -21,6 +21,13 @@ login.click(function(e) {
     $('#form_login').show();
 });
 
+var unlog = $('#unlogin');
+unlog.click(function(e){
+    $('#connectionDiv').show();
+    $('#deconnectionDiv').hide();
+    deconnecteUtilisateur();
+});
+
 //GESTION DES PANNEAUX INSCRIPTION ET ENREGISTREMENT
 var tab = $('#tab li a');
 tab.click(function(e) {
@@ -115,66 +122,43 @@ $('#register-password').change(function(e){
 
 //SOUMISSION DU FORMULAIRE D'INSCRIPTION
 $('#form-register').submit(function(e) {
+    // On empêche la soumission du formulaire à un serveur
     e.preventDefault();
-    
-    var form = $(this);
 
-    var inputId = form.find('input[id="nickname"]');
-    var id = inputId.val();
-    console.log(id);
-
-    
-    var inputEmail = form.find('input[id="register-email"]');
-    var email = inputEmail.val();
-    console.log(email);
-
-    var inputPwd = form.find('input[id="register-password"]');
-    var Pwd = inputPwd.val();
-    console.log(Pwd);
+    if(creer())
+    {
+        $('#alreadyUseEmail').hide();
+        alert("Vous êtes maintenant enregistré ...");
+        $(this).find('input').val('');
+    }
+    else
+    {
+        $('#alreadyUseEmail').show();
+    }
 
 });
-
-
 
 $('#form-login').submit(function(e) {
+    e.preventDefault();
+
     var identifier = $('#login-identifier').val();
     var password   = $('#login-password').val();
-    console.log(identifier);
-    console.log(password);
-    var user = {
-        identifier: identifier,
-        password: password
-    };
-    e.preventDefault();
-    $(this).find('input').val('');
-    $.post(
-        'json/utilisateurs.json',
-        user,
-        function(data){
-            var i = 0;
-            while ( i < data.user.length) {
-                console.log(user.identifier, user.password, data.user[i], i, data.user.length);
-                if (user.identifier == data.user[i].email && user.password == data.user[i].mdp) {
-                    console.log("sucess");
-                    break;
-                } else if (i == data.user.length -1) {
-                    if (user.identifier == "" || user.password == "") {
-                        console.log("elements manquants");
-                    } else {
-                        console.log("inexistant");
-                    }
-                }
-                i++;
-            }
-        },
-        'json'
-        );
+
+    
+    if(utilisateurSaisieEstValide(identifier, password))
+    {
+        $('#wrongLoggin').hide();
+        $('#connectionDiv').hide();
+        $('#deconnectionDiv').show();
+        alert("Vous êtes maintenant connecté ...");
+        $(this).find('input').val('');
+    }
+    else
+    {
+        $('#wrongLoggin').show();
+    }
+    
 });
 
-
-
-
-
-
-
 });
+
