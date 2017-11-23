@@ -1,0 +1,50 @@
+ul[id="onglets"] li {
+	display: inline;
+}
+
+#page {
+	width: 100%;
+	height:120px;
+	margin: auto;
+}
+
+#header {
+	background-image: url(../image/header.jpg);
+	width: 100%;
+	height: 230px;
+	background-size: 100% 130%;
+	background-repeat: no-repeat;
+	margin: auto;
+	font: bold;
+
+}
+
+#menu {
+	width: 100%;
+	margin: auto;
+	background-color: #e5e5e5;
+}
+
+#onglets {
+	text-align: center;
+	float: center;
+	margin: auto;
+	height: 100%;
+	width:100%;
+}
+
+#liste_menu{
+	height: 100%;
+	width:100%;
+	margin: auto;
+}
+
+#login {
+	margin-top: 2%;
+	margin-right: 2%;
+}
+
+#liste_panneau {
+	width: 100%;
+	margin: auto;
+}
