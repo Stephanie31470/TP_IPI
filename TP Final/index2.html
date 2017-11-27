@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html ng-app="tripStore">
+	<head >
+		<title>Rêva voyage</title>
+		<meta charset="utf-8">
+		<!--Chargement des fichiers CSS-->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Cookie|Oxygen" rel="stylesheet">
+		<!--Chargement des fichiers JS-->
+		<script src="js/redirection.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/voyage.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/carte.js"></script>
+		<script src="js/reserver.js"></script>
+		<!-- FavIcon et police -->
+		<link rel="shortcut icon" href="image/favIcon.png">
+	</head>
+	<body id="page">
+		
+		<!--En tête de page -->
+		<header id="header" >
+			<div id="connectionDiv" >
+				<a id="login" class="btn btn-primary float-right" href="#login"> Se connecter/S'inscrire</a>
+			</div>
+			<div id="deconnectionDiv" style="display: none;">
+				<a id="unlog" class="btn btn-primary float-right" href="#unlogin"> Se déconnecter</a>
+			</div>
+		</header>
+		<!--Le menu d'onglet-->
+		<div id="menu">
+			<div id="onglets">
+				<ul class="nav nav-pills" id="liste_menu">
+					<li class="nav-item col-md">
+						<a href="#onglet2" data-panneau-id="panneau2" id="onglet2" class="nav-link active">A Propos...</a>
+					</li>
+					<li class="nav-item col-md">
+						<a href="#onglet3" data-panneau-id="panneau3" id="onglet3" class="nav-link">La mer</a>
+					</li>
+					<li class="nav-item col-md">
+						<a href="#onglet4" data-panneau-id="panneau4" id="onglet4" class="nav-link">La montagne</a>
+					</li>
+					
+					<li class="nav-item col-md">
+						<a href="#onglet5" data-panneau-id="panneau5" id="onglet5" class="nav-link">L'étranger</a>
+					</li>
+					<li class="nav-item col-md">
+						<a href="#onglet7" data-panneau-id="panneau7" id="onglet7" class="nav-link">Rechercher</a>
+					</li>
+					<li class="nav-item col-md">
+						<a href="#onglet6" data-panneau-id="panneau6" id="onglet6" class="nav-link">Nous contacter</a>
+					</li>
+					<li class="nav-item col-md">
+						<a href="#onglet1" data-panneau-id="panneau1" id="onglet1" class="nav-link">Notre livre d'or</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--Liste des panneaux-->
+		<div id="liste_panneau" class="container">
+			
+			<!-- Panneau a propos -->
+			<div class="panneau row" id="panneau2" >
+				<div class="row col-md-12 ">
+					<div class="col-md-9 text-justify presentation">
+						<h1 class="font-weight-bold">Venez vous évader avec nous !</h1><br/>
+						<p>Que vous propose Rêva Voyage ?</p>
+						<p>En quelques mots, nous vous présentons une nouvelle sélection de ventes exclusives, des offres à la carte parmi un catalogue de produits classés par thématiques, ainsi que des ventes dernière minute pour un départ immédiat. En étant membre Rêva Voyage, vous pouvez accéder à des offres privilégiées de séjours, circuits thématiques, circuits sur mesure ou encore combinés pour découvrir différents hôtels lors de votre voyage.</p>
+						<p>Et vous voulez connaître le plus chouette dans tout ça ?</p>
+						<p>Rêva Voyage a été créé par des professionnels du web et du voyage parcourant le monde et négociant de supers offres rien que pour vous avec des réductions allant de -10% à -50 !
+							Vous bénéficiez ainsi d’offres inédites au meilleur rapport qualité/prix.
+						Maintenant que l’on s’est tout dit, il ne vous reste plus qu’à créer votre compte client en quelques clics pour accéder à toutes nos offres de voyage de luxe. La vie est trop courte pour résister à de pareilles opportunités… Il est temps de faire vos valises !</p>
+					</div>
+					
+					<div class="imgPalmier col-md-3 d-flex justify-content-center">
+						<img class="palmier rounded" src="image/palmier.jpeg" alt="photo d'un palmier">
+					</div>
+				</div>
+			</div>
+			<!--Panneau des voyages à la mer -->
+			<div class="panneau" id="panneau3" style="display:none" ng-controller="tripstore as store">
+				<div ng-repeat="mer in store.Meproducts track by $index">
+					<div class="row justify-content-center col-md-12" style="height: 50px;"><h2 class="font-weight-bold">{{mer.nom}}</h2> </div>
+					<div class="row justify-content-center col-md-12" style="height: 400px;">
+						<div id={{mer.produit}} class="carousel slide" data-ride="carousel">
+							
+							<ul class="carousel-indicators">
+								<li data-target="#{{mer.produit}}" data-slide-to="0" class="active"></li>
+								<li data-target="#{{mer.produit}}" data-slide-to="1"></li>
+								<li data-target="#{{mer.produit}}" data-slide-to="2"></li>
+							</ul>
+							
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img class="img" ng-src="{{mer.image1}}" alt="photo voyages mer">
+								</div>
+								<div class="carousel-item">
+									<img class="img" ng-src="{{mer.image2}}" alt="photo voyages mer">
+								</div>
+								<div class="carousel-item">
+									<img class="img" ng-src="{{mer.image3}}" alt="photo voyages mer">
+								</div>
+							</div>
+							<a class="carousel-control-prev" href="#{{mer.produit}}" data-slide="prev">
+								<span class="carousel-control-prev-icon"></span>
+							</a>
+							<a class="carousel-control-next" href="#{{mer.produit}}" data-slide="next">
+								<span class="carousel-control-next-icon"></span>
+							</a>
+						</div>
+					</div><br/>
+					<div class="row col-md-12">
+						<div class="col-md-7" style="float:left">
+							<div class="card bg-light mb-3">
+								<div class="card-header">Evadez-vous à la mer!</div>
+								<div class="card-body">
+									<p class="card-text">{{mer.description}}</p>
+									<button class= "reservation btn btn-primary" type="submit">Réserver</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5" style="float:right">
+							<div class="card text-white bg-info mb-3">
+								<div class="card-header">CARACTERISTIQUES DE VOTRE SEJOUR</div>
+								<div class="card-body">
+									<ul class="card-text">
+										<li>wifi : {{mer.wifi}}</li><br>
+										<li>Service de chambre: {{mer.serv_Chambre}}. Disponible 24h/24</li><br>
+										<li>Nombre de chambres de l'hôtel: {{mer.nb_chambre}} </li><br>
+										<li>Nombre de restaurants de l'hôtel: {{mer.nb_restau}} </li><br>
+										<li>Séjour à partir de : {{mer.prix_min}} € la semaine </li><br>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div><br>
+				</div>
+			</div>
+			
+			<!--Panneau des voyages à la montagne -->
+			<div class="panneau" id="panneau4" style="display:none" ng-controller="tripstore as store">
+				<div ng-repeat="montagne in store.Moproducts track by $index">
+					<div class="row justify-content-center col-md-12" style="height: 50px;"><h2 class="font-weight-bold">{{montagne.nom}}</h2> </div>
+					<div class="row justify-content-center col-md-12" style="height: 400px;">
+						<div id={{montagne.produit}} class="carousel slide" data-ride="carousel">
+							
+							<ul class="carousel-indicators">
+								<li data-target="#{{montagne.produit}}" data-slide-to="0" class="active"></li>
+								<li data-target="#{{montagne.produit}}" data-slide-to="1"></li>
+								<li data-target="#{{montagne.produit}}" data-slide-to="2"></li>
+							</ul>
+							
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img class="img" ng-src="{{montagne.image1}}" alt="alpes">
+								</div>
+								<div class="carousel-item">
+									<img class="img" ng-src="{{montagne.image2}}" alt="alpes">
+								</div>
+								<div class="carousel-item">
+									<img class="img" ng-src="{{montagne.image3}}" alt="alpes">
+								</div>
+							</div>
+							<a class="carousel-control-prev" href="#{{montagne.produit}}" data-slide="prev">
+								<span class="carousel-control-prev-icon"></span>
+							</a>
+							<a class="carousel-control-next" href="#{{montagne.produit}}" data-slide="next">
+								<span class="carousel-control-next-icon"></span>
+							</a>
+						</div>
+					</div><br/>
+					
+					<div class="row col-md-12">
+						<div class="col-md-7" style="float:left">
+							<div class="card bg-light mb-3">
+								<div class="card-header">Evadez-vous à la montagne!</div>
+								<div class="card-body">
+									<p class="card-text">{{montagne.description}}</p>
+									<button class = "reservation btn btn-primary" type="submit">Réserver</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5" style="float:right">
+							<div class="card text-white bg-info mb-3">
+								<div class="card-header">CARACTERISTIQUES DE VOTRE SEJOUR</div>
+								<div class="card-body">
+									<ul class="card-text">
+										<li>wifi : {{montagne.wifi}}</li><br>
+										<li>Service de chambre: {{montagne.serv_Chambre}}. Disponible 24h/24</li><br>
+										<li>Nombre de chambres de l'hôtel: {{montagne.nb_chambre}} </li><br>
+										<li>Nombre de restaurants de l'hotel: {{montagne.nb_restau}} </li><br>
+										<li>Séjour à partir de : {{montagne.prix_min}} € </li><br>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div><br>
+				</div>
+			</div>
+			<!--Panneau des voyages à l'étranger -->
+			<div class="panneau" id="panneau5" style="display:none" ng-controller="tripstore as store">
+				<div ng-repeat="etranger in store.Etproducts track by $index">
+					<div class="row justify-content-center col-md-12" style="height: 50px;"><h2 class="font-weight-bold">{{etranger.nom}}</h2> </div>
+					<div class="row justify-content-center col-md-12" style="height: 400px;">
+						<div id={{etranger.produit}} class="carousel slide" data-ride="carousel">
+							
+							<ul class="carousel-indicators">
+								<li data-target="#{{etranger.produit}}" data-slide-to="0" class="active"></li>
+								<li data-target="#{{etranger.produit}}" data-slide-to="1"></li>
+								<li data-target="#{{etranger.produit}}" data-slide-to="2"></li>
+							</ul>
+							
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img class="img" ng-src="{{etranger.image1}}" alt="alpes">
+								</div>
+								<div class="carousel-item">
+									<img class="img" ng-src="{{etranger.image2}}" alt="alpes">
+								</div>
+								<div class="carousel-item">
+									<img class="img" ng-src="{{etranger.image3}}" alt="alpes">
+								</div>
+							</div>
+							<a class="carousel-control-prev" href="#{{etranger.produit}}" data-slide="prev">
+								<span class="carousel-control-prev-icon"></span>
+							</a>
+							<a class="carousel-control-next" href="#{{etranger.produit}}" data-slide="next">
+								<span class="carousel-control-next-icon"></span>
+							</a>
+						</div>
+					</div><br/>
+					
+					<div class="row col-md-12">
+						<div class="col-md-7" style="float:left">
+							<div class="card bg-light mb-3">
+								<div class="card-header">Evadez-vous à l'étranger!</div>
+								<div class="card-body">
+									<p class="card-text">{{etranger.description}}</p>
+									<button class = "reservation btn btn-primary" type="submit">Réserver</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5" style="float:right">
+							<div class="card text-white bg-info mb-3">
+								<div class="card-header">CARACTERISTIQUES DE VOTRE SEJOUR</div>
+								<div class="card-body">
+									<ul class="card-text">
+										<li>wifi : {{etranger.wifi}}</li><br>
+										<li>Service de chambre: {{etranger.serv_Chambre}}. Disponible de 24h/24</li><br>
+										<li>Nombre de chambres de l'hôtel: {{etranger.nb_chambre}} </li><br>
+										<li>Nombre de restaurants de l'hotel: {{etranger.nb_restau}} </li><br>
+										<li>Séjour à partir de : {{etranger.prix_min}} </li><br>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div><br>
+				</div>
+			</div>
+			<!--Panneau du formulaire de contact -->
+			<div class="panneau" id="panneau6" style="display:none">
+				<div>
+					<h2 class="font-weight-bold">Formulaire de contact</h2>
+					<p>Une question ? N'hésitez pas à nous contacter via ce formulaire. Nous nous engageons à vous répondre sous 48h.</p>
+				</div>
+				<div>
+					<div id="divFormContact" class="form-group">
+						<form name="form_contact" id="form_contact"  method="get" action="mailto:s.longche@laposte.net">
+							<label for="mail_contact">Votre e-mail</label>
+							<input class="form-control" type="email" name="mail_contact" id="mail_contact" placeholder="Veuillez saisir votre e-mail"><br>
+							<div style="display: none;" class="alert alert-danger" >Email invalide</div>
+							<label for="message">Votre message</label>
+							<textarea class="form-control" id="message" placeholder="Saisissez votre message ici."></textarea><br>
+							<div style="display: none;" class="alert alert-danger" >Votre message est vide</div>
+							<button type="submit" class =" btn btn-primary">Envoyer</button>
+						</form>
+					</div>
+					<div id="confirmation_envoi" class="alert alert-success" style="display:none;">Votre message nous a bien été transmis. Nous vous recontacterons d'ici 48h. A bientôt !
+					</div>
+				</div><br>
+				<div><h2 class="font-weight-bold">Pour venir nous rencontrer</h2></div>
+				<div class="searchBox row">
+					<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+					<div id="map"></div>
+					<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMDwTSOXlk8uLZy7jju6fiNuG-jxirfEc&libraries=places&callback=initAutocomplete"></script>
+				</div>
+			</div>
+			<!--Panneau recherche-->
+			<div class="panneau row col-md-12" id="panneau7" style="display: none;" ng-controller="searchCtrl as search">
+				<div class="row col-md-12  justify-content-center">
+					<h2 class="font-weight-bold">Formulaire de recherche</h2>
+				</div>
+				<div class="row col-md-12 d-flex justify-content-center">
+					<p>Pour vous aidez à selectionner votre voyage, indiquez vos préférences à l'aide du questionnaire ci-dessous.</p>
+				</div >
+				<div class="row d-flex justify-content-center col-md-12 form_search">
+					<form id="form_search">
+						<div class="form-group">
+							<label for="destination">Où souhaitez-vous partir ?</label>
+							<select class="form-control" id="destination" ng-model="destination">
+								<option ng-selected="selected" value="Ne se prononce pas" >Ne se prononce pas</option>
+								<option value="mer" >A la mer</option>
+								<option value="montagne">A la montagne</option>
+								<option value="etranger">A l'étranger</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="wifi">Souhaitez-vous le wifi dans votre hôtel ?</label>
+							<select class="form-control" id="wifi" ng-model="wifi">
+								<option ng-selected="selected" value="Ne se prononce pas" >Ne se prononce pas</option>
+								<option value="oui">Oui</option>
+								<option value="non">Non</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="service">Souhaitez-vous que l'établissement possède un service de chambre ?</label>
+							<select class="form-control" id="service" ng-model="service">
+								<option ng-selected="selected" value="Ne se prononce pas">Ne se prononce pas</option>
+								<option value="oui">Oui</option>
+								<option value="non">Non</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="bar">Souhaitez-vous que l'établissement possède un bar ?</label>
+							<select class="form-control" id="bar" ng-model="bar" ng-value="">
+								<option ng-selected="selected" value="Ne se prononce pas">Ne se prononce pas</option>
+								<option value="oui">Oui</option>
+								<option value="non">Non</option>
+								
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="restaurant">Souhaitez-vous que l'établissement possède un restaurant ?</label>
+							<select class="form-control" id="restaurant" ng-model="restaurant">
+								<option ng-selected="selected" value="Ne se prononce pas">Ne se prononce pas</option>
+								<option value="oui">Oui</option>
+								<option value="non">Non</option>
+								
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="budget">Quel est votre budget maximum ?</label>
+							<select class="form-control" id="budget" ng-model="budget">
+								<option ng-selected="selected" value="Ne se prononce pas">Ne se prononce pas</option>
+								<option value="inf800">550 € ET 800 €</option>
+								<option value="sup801">801 € ET 1200 €</option>
+							</select>
+						</div>
+						<button class="btn btn-primary" id="rec" ng-click="search.rechercher()">Rechercher</button>
+						<div id="errRech" style="visibility: hidden;" class="alert alert-danger">Vous devez selectionner au moins 2 critères</div>
+					</form>
+				</div>
+				<div id="noResults" style="visibility: hidden;" class="alert alert-danger">Aucun résultat ne correspond à votre demande. Veuillez essayer d'autres critères de recherche.</div>
+				<div class="row col-md-12" id="result" style="visibility: hidden;">
+					<table class = "table table-responsive-md table-bordered" id="tabresult">
+						<tr class="thead-light">
+							<th scope="col">Lieu</th>
+							<th scope="col">Prix €</th>
+							<th scope="col">Service</th>
+							<th scope="col">Bars</th>
+							<th scope="col">Restau.</th>
+							<th scope="col">Wifi</th>
+							<th scope="col">Chambres</th>
+							<th scope="col reservation">Réserver ?</th>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!--Panneau d'inscription-->
+			<div class="panneau" id="form_login" style="display: none;">
+				<div>
+					<h2 class="font-weight-bold">Connectez-vous ou créez votre compte</h2>
+				</div>
+				<!--Onglets inscription et enregistrement -->
+				<ul id="tab" class="nav nav-tabs">
+					<li class="nav-item">
+						<a data-tab-id="tab-login" class="nav-link active" id="tab1" href="#">Connexion</a>
+					</li>
+					<li class="nav-item">
+						<a data-tab-id="tab-register" class="nav-link" id="tab2" href="#">Inscription</a>
+					</li>
+				</ul>
+				<!--Onglets de connexion-->
+				<div class="tab" id="tab-login">
+					<div class="card">
+						<div class="card-body">
+							<form id="form-login">
+								<div class="form-group">
+									<label for="login-identifier">Identifiant ou E-mail</label>
+									<input type="text" class="form-control" id="login-identifier" aria-describedby="identifierHelp" placeholder="Entrez votre identifiant ou e-mail">
+									<div class="text-danger collapse"></div>
+								</div>
+								<div class="form-group">
+									<label for="login-password">Mot de passe</label>
+									<input type="password" class="form-control" id="login-password" placeholder="Mot de passe">
+								</div>
+								<div id="wrongLoggin" style="display:none;" class="alert alert-danger">
+									Votre identifiant et/ou votre mot de passe est invalide.
+								</div>
+								<div id="emptyInfo" style="display:none;" class="alert alert-danger">
+									Vous devez remplir tous les champs.
+								</div>
+								<button type="submit" class="btn btn-primary">Envoyer</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!--Onglets d'inscription-->
+				<div class="tab" id="tab-register" style="display:none;">
+					<div class="card">
+						<div class="card-body">
+							<form id="form-register">
+								<div class="form-group">
+									<label for="nickname">Identifiant</label>
+									<input type="text" class="form-control" id="nickname" aria-describedby="usernameHelp" placeholder="Entrez un identifiant (lettres, chiffres, _)" />
+								</div>
+								<div id="wrongUsername" style="display:none;">Votre identifiant est invalide</div>
+								<div class="form-group">
+									<label for="register-email">Adresse e-mail</label>
+									<input type="email" class="form-control" id="register-email" aria-describedby="emailHelp" placeholder="Entrez un e-mail">
+									<small class="text-danger collapse"></small>
+								</div>
+								<div id="wrongEmail" style="display:none;">Votre email est invalide.</div>
+								<div class="form-group">
+									<label for="register-password">Mot de passe</label>
+									<input type="password" class="form-control" id="register-password" placeholder="Mot de passe (4 caractères min.)">
+									<small class="text-danger collapse"></small>
+								</div>
+								<div id="wrongPwd" style="display:none;">Votre mot de passe est invalide. Veuillez en entrer un contenant au moins : une lettre majuscule, une lettre minuscule, et un nombre.
+								</div>
+								<div id="alreadyUseEmail" style="display:none;">
+									Cette adresse email est déjà enregistrée. Connectez vous ou utilisez en une autre.
+								</div>
+								<button id="register" type="submit" class="btn btn-primary">Envoyer</button>
+								
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Panneau de réservation -->
+			<div class="panneau" id="reservation" style="display: none;">
+				<h2>Formulaire de réservation</h2>
+				<div>
+					<form id="form_reserv" >
+						<div>
+						<p>Vous avez choisi de partir grâce à nos services. Nous vous remercions de votre confiance. Pour préparer au mieux votre départ, veuillez compléter les champs suivants.</p>
+					</div>
+						
+						<div class="form-group">
+							<p>Veuillez confirmez la destination de votre choix</p>
+							<select class="form-control" required id="lieu">
+								<option value="Les Alpes">Les Alpes</option>
+								<option value="Les Pyrénées">Les Pyrénées</option>
+								<option value="L'Asie">L'Asie</option>
+								<option value="L'île Maurice">L'île Maurice</option>
+								<option value="Las Vegas">Las Vegas</option>
+								<option value="La Corse">La Corse</option>
+								<option value="La Bretagne">La Bretagne</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<p>Combien de personnes participerons au voyage ?</p>
+							<input class="form-control" id="personne" type="number" min="1" max="30" step="1" value="1" required>
+						</div>
+						<div class="form-group">
+							<p> De combien de chambre souhaitez-vous disposez ? </p>
+							<input class="form-control" class="form-control" id="chambre" type="number" min="0" max="30" step="1" value="1" required>
+						</div>
+						<div class="form-group">
+							<p>Quand souhaitez-vous partir ?</p>
+							<input class="form-control" id="date" type="date" name="in" required>
+						</div>
+						<div class="form-group">
+							<p>Vous souhaitez sejourner à l'hôtel pour une durée de : </p>
+							<select class="form-control"  id="duree" required>
+								<option value="1">1 jour</option>
+								<option value="2">2 jours</option>
+								<option value="3">3 jours</option>
+								<option value="4">4 jours</option>
+								<option value="5">5 jours</option>
+								<option value="6">6 jours</option>
+								<option value="7">1 semaine</option>
+								<option value="14">2 semaines</option>
+								<option value="21">3 semaines</option>
+								<option value="30">1 mois</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<p>Vous souhaitez la : </p>
+							<select class="form-control" id="pension" required>
+								<option value="1">Demi-pension</option>
+								<option value="2">Pension complète</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<p> Souhaitez-vous souscrire à une assurance annulation ?</p>
+							<select class="form-control" id="assurance" required>
+								<option value="oui">Oui</option>
+								<option value="non">Non</option>
+							</select>
+						</div><br>
+						<button id="btnCalculer" class="btn btn-primary" onclick="calculTarif()">Calculer</button><br>
+						<div style="display: none;" id="totalTTC">
+							<div class="form-control alert alert-success">Coût total : <span id="coutTTC"></span>€ TTC</div><br>
+							<button onclick="envoyerDemande()" class="btn btn-primary">Envoyer votre demande</button>
+						</div>
+					</form><br>
+					<div id="confirmationDemande" class="alert alert-success" style="display: none;">Votre demande de réservation nous a bien été transmise. Nous l'étudirons avec attention afin de vous trouver les meilleures offres.</div>
+				</div>
+				
+			</div>
+			<!-- Panneau accueil -->
+			<div class="panneau row" id="panneau1" style="display: none;">
+				<div>
+					PAGE EN CONSTRUCTION
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/utilisateurs.js"></script>
+		<script src="js/jquery.js"> </script>
+	</body>
+</html>

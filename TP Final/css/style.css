@@ -1,0 +1,159 @@
+/*Mise en forme menu*/
+ul[id="onglets"] li {
+	display: inline;
+}
+#pac-input{
+  width: 100%;
+}
+
+.searchBox{
+  width: 100%;
+}
+#carousselle{
+  width: 100%;
+}
+.img{
+  width: 100%;
+}
+
+.panneau{
+  width: 100%;
+  margin : auto;
+  margin-bottom: 2%;
+  padding-top: 2%;
+}
+
+
+table{
+  width: 100%;
+  text-align: center;
+}
+
+
+h2{
+  width: 100%;
+  text-align: center;
+}
+.col-md-7{
+    margin:auto;
+    
+}
+
+.col-md-5{
+    margin:auto;
+}
+
+.colonne{
+    height:100%;
+}
+
+.palmier{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#page {
+	width: 100%;
+	height:120px;
+	margin: auto;
+}
+
+#header {
+	background-image: url(../image/header.jpg);
+	width: 100%;
+	height: 230px;
+	background-size: 100% 130%;
+	background-repeat: no-repeat;
+	margin: auto;
+}
+
+#menu {
+	width: 100%;
+	margin: auto;
+  margin-bottom: 2%;
+	background-color: #e5e5e5;
+}
+
+#liste_panneau {
+  width: 100%;
+  margin: auto;
+}
+
+
+#onglets {
+	text-align: center;
+	float: center;
+	margin: auto;
+	height: 100%;
+	width:100%;
+}
+
+#liste_menu{
+	height: 100%;
+	width:100%;
+	margin: auto;
+}
+
+#login, #unlog {
+	margin-top: 2%;
+	margin-right: 2%;
+	height: 40px;
+	float: right;
+  font: bold;
+
+}
+
+/*CSS de GOOGLE MAPS*/
+#map {
+        height: 400px;
+        width: 100%;
+        background-color: grey;
+       }
+.controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+#target {
+  width: 345px;
+}
+
+
+
